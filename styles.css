@@ -91,3 +91,35 @@ body .container {
     transform: translate(0, 0);
   }
 }
+
+
+@media (max-width: 768px) {
+    body {
+        font-size: 20px; /* Reduce base font size */
+        text-align: center;
+    }
+
+    .container {
+        width: 90%;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .image {
+        height: auto;
+        max-width: 80%;
+    }
+
+    .pp {
+        font-size: 30px; /* Reduce text size */
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+        .buttons button {
+            font-size: 20px; /* Reduce button size */
+            padding: 8px 20px;
+        }
+}
