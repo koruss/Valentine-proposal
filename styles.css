@@ -1,14 +1,16 @@
 body {
-  font-family: "Lobster", cursive; /* Change to a romantic cursive font */
-  background-color: #ffdde1;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100vh;
-  margin: 0;
-  background: url("images/image.jpg") repeat;
-  font-size: 35px;
-  color: rgb(255, 0, 174);
+    font-family: "Lobster", cursive; /* Change to a romantic cursive font */
+    background-color: #ffdde1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    margin: 0;
+    background: url("images/image.jpg") repeat;
+    font-size: 35px;
+    color: rgb(255, 0, 174);
+    background: url("images/image.jpg") no-repeat center center fixed;
+    background-size: cover; /* Adjusts image to fit screen */
 }
 .hh {
   -webkit-text-stroke: 2px #71004f;
@@ -35,7 +37,16 @@ body .container {
 }
 
 .image {
-  height: 280px;
+    width: 100%; /* Make it scale based on its container */
+    max-width: 300px; /* Prevent it from getting too big */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.image-container {
+    width: 90%;
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .buttons button {
@@ -95,8 +106,8 @@ body .container {
 
 @media (max-width: 768px) {
     body {
-        font-size: 20px; /* Reduce base font size */
-        text-align: center;
+    background-size: contain; /* Adjusts for smaller screens */
+    background-attachment: scroll; /* Avoids fixed backgrounds breaking layout */
     }
 
     .container {
