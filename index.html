@@ -73,12 +73,12 @@
     <h1>Quieres ser mi tilina? 🥺</h1>
     <div class="buttons">
         <button class="btn yes" onclick="sayYes()">YES</button>
-        <audio id="yesSound" src="love.mp3"></audio>
+        
         <button class="btn no" id="noButton" ontouchstart="moveNo()" onmouseover="moveNo()">NO</button>
     </div>
     <p id="message"></p>
     <img src="https://tenor.com/view/huh-what-question-cat-cute-gif-16714152" class="cat-img" id="catImage">
-
+    <audio id="yesSound" src="love.mp3"></audio>
     <script>
         function sayYes() {
             document.getElementById('message').innerText = "Siuuu";
