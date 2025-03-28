@@ -48,15 +48,16 @@
             gap: 20px;
             position: relative;
             width: 100%;
+            max-width: 300px;
         }
 
         .btn {
             font-size: 20px;
             padding: 10px 20px;
-            margin: 10px;
             cursor: pointer;
             border: none;
             border-radius: 10px;
+            position: relative;
         }
 
         .yes {
@@ -67,7 +68,6 @@
         .no {
             background-color: #f44336;
             color: white;
-            position: absolute;
         }
 
         .cat-img {
@@ -99,12 +99,11 @@
             var noButton = document.getElementById('noButton');
             var buttonWidth = noButton.offsetWidth;
             var buttonHeight = noButton.offsetHeight;
-            var maxX = window.innerWidth - buttonWidth - 10;
-            var maxY = window.innerHeight - buttonHeight - 10;
+            var maxX = window.innerWidth - buttonWidth - 20;
+            var maxY = window.innerHeight - buttonHeight - 20;
             var x = Math.random() * maxX;
             var y = Math.random() * maxY;
-            noButton.style.left = x + 'px';
-            noButton.style.top = y + 'px';
+            noButton.style.transform = `translate(${x}px, ${y}px)`;
         }
 
         function createHearts() {
