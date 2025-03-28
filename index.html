@@ -34,17 +34,17 @@
         }
 
         h1 {
-            margin-top: 50px;
+            margin-top: 20px;
         }
 
         .buttons {
             margin-top: 20px;
-            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 20px;
-            width: 100%;
+            position: relative;
+            width: auto;
         }
 
         .btn {
@@ -64,7 +64,7 @@
         .no {
             background-color: #f44336;
             color: white;
-            position: absolute;
+            position: relative;
         }
 
         .cat-img {
@@ -97,6 +97,7 @@
             var maxY = window.innerHeight - noButton.offsetHeight;
             var x = Math.random() * maxX;
             var y = Math.random() * maxY;
+            noButton.style.position = "absolute";
             noButton.style.left = x + 'px';
             noButton.style.top = y + 'px';
         }
