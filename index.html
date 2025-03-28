@@ -84,6 +84,7 @@
     <p id="message"></p>
     <img src="images\huh-what.gif" class="cat-img" id="catImage">
     <audio id="yesSound" src="love.mp3"></audio>
+    <audio id="errorSound" src="error.mp3"></audio>
     <script>
         function sayYes() {
             document.getElementById('message').innerText = "Siuuu ღ´͈ ᵕ `͈ )♡⃛(´͈ ᵕ `͈ ღ 💕💕";
@@ -92,6 +93,7 @@
         }
 
         function moveNo() {
+            document.getElementById('errorSound').play();
             var noButton = document.getElementById('noButton');
             var maxX = window.innerWidth - noButton.offsetWidth;
             var maxY = window.innerHeight - noButton.offsetHeight;
@@ -100,6 +102,7 @@
             noButton.style.position = "absolute";
             noButton.style.left = x + 'px';
             noButton.style.top = y + 'px';
+
         }
 
         function createHearts() {
