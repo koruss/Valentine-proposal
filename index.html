@@ -81,7 +81,7 @@
     <h1>Que mami va a prometer? 🥺👀</h1>
     <div class="buttons">
         <button class="btn yes" onclick="sayYes()">SIP 😍</button>
-        <button class="btn no" id="noButton" ontouchstart="moveNo()" onmouseover="moveNo()">NOP 🤢</button>
+        <button class="btn no" id="noButton" onclick="showCatMeme()">NOP 🤢</button>
     </div>
     <h2 id="message"></h2>
     <img src="images\huh-what.gif" class="cat-img" id="catImage">
@@ -94,16 +94,18 @@
             document.getElementById('yesSound').play();
         }
 
-        function moveNo() {
+        function showCatMeme() {
             document.getElementById('errorSound').play();
-            var noButton = document.getElementById('noButton');
-            var buttonWidth = noButton.offsetWidth;
-            var buttonHeight = noButton.offsetHeight;
-            var maxX = window.innerWidth - buttonWidth - 20;
-            var maxY = window.innerHeight - buttonHeight - 20;
-            var x = Math.random() * maxX;
-            var y = Math.random() * maxY;
-            noButton.style.transform = `translate(${x}px, ${y}px)`;
+            let catMemes = [
+                "images/cat_nope.gif",
+                "images/cat_sad.gif",
+                "images/cat_pleading.gif",
+                "images/cat_pout.gif",
+                "images/cat_begging.gif"
+            ];
+            let randomMeme = catMemes[Math.floor(Math.random() * catMemes.length)];
+            document.getElementById('catImage').src = randomMeme;
+            document.getElementById('message').innerText = "Piénsalo bien... 😿";
         }
 
         function createHearts() {
