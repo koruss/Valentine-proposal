@@ -94,19 +94,15 @@
         function sayYes() {
             document.getElementById('message').innerText = "💕 Siuuu ღ´͈ ᵕ `͈ )♡⃛(´͈ ᵕ `͈ ღ 💕";
             document.getElementById('catImage').src="images\\cat_jump.gif";
-            let audio = document.getElementById('yesSound');
-            let audio2 = document.getElementById('errorSound');
-            audio2.stop();
-            audio.currentTime = 0;
-            audio.play();
+            manageSound("YES");
+
             
 
         }
 
         function showCatMeme() {
-            let audio = document.getElementById('yesSound');
-            let audio2 = document.getElementById('errorSound');
-            audio.stop();
+
+            manageSound("NO");
             audio2.currentTime = 0;
             audio2.play();
             let catMemes = [
@@ -137,6 +133,25 @@
                 setTimeout(() => { heart.remove(); }, 4000);
             }
         }
+        function stopAudio(element){
+            element.pause();
+            element.currentTime = 0;
+        }
+
+        function manageSound(element){
+            let audio = document.getElementById('yesSound');
+            let audio2 = document.getElementById('errorSound');
+            stopAudio(audio);
+            stopAudio(audio2);
+            if (element == "YES"){
+                audio.play();
+            }
+            else{
+                audio2.play();
+            }
+
+        }
+
         setInterval(createHearts, 1000);
     </script>
     </body>
