@@ -95,13 +95,18 @@
             document.getElementById('message').innerText = "💕 Siuuu ღ´͈ ᵕ `͈ )♡⃛(´͈ ᵕ `͈ ღ 💕";
             document.getElementById('catImage').src="images\\cat_jump.gif";
             let audio = document.getElementById('yesSound');
+            let audio2 = document.getElementById('errorSound');
+            audio2.stop();
             audio.currentTime = 0;
             audio.play();
+            
 
         }
 
         function showCatMeme() {
-            let audio2 = document.getElementById('errorSound')
+            let audio = document.getElementById('yesSound');
+            let audio2 = document.getElementById('errorSound');
+            audio.stop()
             audio2.currentTime = 0;
             audio2.play();
             let catMemes = [
