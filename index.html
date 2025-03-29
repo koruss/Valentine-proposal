@@ -106,7 +106,7 @@
         function showCatMeme() {
             let audio = document.getElementById('yesSound');
             let audio2 = document.getElementById('errorSound');
-            audio.stop()
+            audio.stop();
             audio2.currentTime = 0;
             audio2.play();
             let catMemes = [
@@ -118,7 +118,7 @@
 
             let newImage;
             do{
-                newImage = catImages[Math.floor(Math.random() * catImages.length)];
+                newImage = catMemes[Math.floor(Math.random() * catMemes.length)];
             } while (newImage === lastImage); 
             lastImage = newImage;
             document.getElementById('catImage').src = newImage;
