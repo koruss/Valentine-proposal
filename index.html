@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Aja Aja</title>
+        <title>😻</title>
         <style>
         body {
             text-align: center;
@@ -40,12 +40,13 @@
             animation: floatingHearts 4s linear infinite;
         }
 
-        h1 {
-            margin-top: 20px;
+        h2 {
+            margin-top: 50px;
         }
+        
 
         .buttons {
-            margin-top: 20px;
+            margin-top: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -79,11 +80,24 @@
             height: auto;
             margin-top: 20px;
         }
+
+        .bg-text {
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+            color: white;
+            border-radius: 5px;
+            border: 3px solid #f1f1f1;
+            padding: 20px;
+            
+        }
     </style>
     </head>
     <body>
-        <h1>¿Quieres ser mi novia? 🥺</h1>
-        <h2>Porque yo si quiero ser tu novio 😘</h2>
+        <div class="bg-text">
+            <h1>¿Quieres ser mi novia? 🥺</h1>
+            <h2>Porque yo si quiero ser tu novio 😘</h2>
+        </div>
+
         <div class="buttons">
             <button class="btn yes" onclick="sayYes()">SIP 😍</button>
             <button class="btn no" id="noButton" onclick="showCatMeme()">NOP
