@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aja Aja</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aja Aja</title>
+        <style>
         body {
             text-align: center;
             font-family: Arial, sans-serif;
@@ -76,34 +76,47 @@
             margin-top: 20px;
         }
     </style>
-</head>
-<body>
-    <h1>Que mami va a prometer? 🥺👀</h1>
-    <div class="buttons">
-        <button class="btn yes" onclick="sayYes()">SIP 😍</button>
-        <button class="btn no" id="noButton" onclick="showCatMeme()">NOP 🤢</button>
-    </div>
-    <h2 id="message"></h2>
-    <img src="images\huh-what.gif" class="cat-img" id="catImage">
-    <audio id="yesSound" src="love.mp3"></audio>
-    <audio id="errorSound" src="error.mp3"></audio>
-    <script>
+    </head>
+    <body>
+        <h1>Que mami va a prometer? 🥺👀</h1>
+        <div class="buttons">
+            <button class="btn yes" onclick="sayYes()">SIP 😍</button>
+            <button class="btn no" id="noButton" onclick="showCatMeme()">NOP
+                🤢</button>
+        </div>
+        <h2 id="message"></h2>
+        <img src="images\huh-what.gif" class="cat-img" id="catImage">
+        <audio id="yesSound" src="love.mp3"></audio>
+        <audio id="errorSound" src="error.mp3"></audio>
+        <script>
+        let lastImage = null;
+
         function sayYes() {
-            document.getElementById('message').innerText = "Siuuu ღ´͈ ᵕ `͈ )♡⃛(´͈ ᵕ `͈ ღ 💕💕";
+            document.getElementById('message').innerText = "💕 Siuuu ღ´͈ ᵕ `͈ )♡⃛(´͈ ᵕ `͈ ღ 💕";
             document.getElementById('catImage').src="images\\cat_jump.gif";
-            document.getElementById('yesSound').play();
+            let audio = document.getElementById('yesSound');
+            audio.currentTime = 0;
+            audio.play();
+
         }
 
         function showCatMeme() {
-            document.getElementById('errorSound').play();
+            let audio2 = document.getElementById('errorSound')
+            audio2.currentTime = 0;
+            audio2.play();
             let catMemes = [
                 "images\\cat-cry.gif",
                 "images\\wtf-cat.gif",
                 "images\\crying-cat.webp",
                 "images\\gun.gif"
             ];
-            let randomMeme = catMemes[Math.floor(Math.random() * catMemes.length)];
-            document.getElementById('catImage').src = randomMeme;
+
+            let newImage;
+            do{
+                newImage = catImages[Math.floor(Math.random() * catImages.length)];
+            } while (newImage === lastImage); 
+            lastImage = newImage;
+            document.getElementById('catImage').src = newImage;
             document.getElementById('message').innerText = "Piénsalo bien... 😿";
         }
 
@@ -121,5 +134,5 @@
         }
         setInterval(createHearts, 1000);
     </script>
-</body>
+    </body>
 </html>
